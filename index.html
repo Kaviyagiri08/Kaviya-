@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Environmental Monitoring System</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .data-container {
+            border: 1px solid #ccc;
+            padding: 50px;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            justify-content:center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+    <div class="data-container">
+        <h1><b>Environmental Data</b></h1>
+        <h2><p>Temperature: <span id="temperature">Loading...</span>°C</p></h2>
+        <h2><p>Humidity: <span id="humidity">Loading...</span>%</p></h2>
+    </div>
+
+    <script>
+        // Simulated environmental data (replace with actual data retrieval)
+        function getEnvironmentalData() {
+            return {
+                temperature: 25.5,
+                humidity: 60.2
+            };
+        }
+
+        // Update the data on the web page
+        function updateData() {
+            const data = getEnvironmentalData();
+            document.getElementById("temperature").textContent = data.temperature.toFixed(2);
+            document.getElementById("humidity").textContent = data.humidity.toFixed(2);
+        }
+
+        // Update data every 5 seconds (adjust the interval as needed)
+        setInterval(updateData, 5000);
+        updateData(); // Initial update
+    </script>
+    </div>
+</body>
+</html>
